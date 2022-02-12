@@ -26,3 +26,6 @@ Functional Requirements
 10. Users will be able to view the rules 
 11. Game will display a  bar along the bottom which changes from green to orange to red depending on the time the user takes
 12. Game will ask the user if  their selection is final (are you sure?)
+
+
+WIREFRAME: https://www.figma.com/file/BGnLsKRAJjn9dCn9ZFqQ2K/EECS-project?node-id=18%3A59 
