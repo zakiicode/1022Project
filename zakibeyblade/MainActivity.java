@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
     }
     //private double rand;
     private int round = 1;
-    private int right =0;
     private boolean newRound = false;
     CountDownTimer timer;
     private int score =0;
@@ -67,6 +66,8 @@ public class MainActivity extends AppCompatActivity {
                 timerView.setText("00");
                 TextView messageView= (TextView) findViewById(R.id.message);
                 messageView.setVisibility(View.INVISIBLE);
+                TextView beView= (TextView) findViewById(R.id.between);
+                beView.setVisibility(View.INVISIBLE);
                 EditText guessView=(EditText) findViewById(R.id.guess);
                 guessView.setVisibility(View.INVISIBLE);
 
@@ -84,14 +85,14 @@ public class MainActivity extends AppCompatActivity {
                 noView.setVisibility(View.INVISIBLE);
                 rorwView.setText("WRONG BUM");
 
-                //round = 0;
+                round = 10;
 
             }
         };
         if(onoroff) {
             timer.start();
         }
-        else if (onoroff == false){
+        else if (!onoroff){
             timer.cancel();
         }
     }
@@ -203,9 +204,8 @@ public class MainActivity extends AppCompatActivity {
         TextView scoreView= (TextView) findViewById(R.id.score);
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int width = displayMetrics.widthPixels;
-        if (gV == 10){
+        if (gV == random(10)){
             rorwView.setText("YESSIR");
-            right++;
             newRound=true;
             score = score + 100;
             if(speed<=width/5){
@@ -228,6 +228,7 @@ public class MainActivity extends AppCompatActivity {
         else{
             rorwView.setText("WRONG BUM");
             scoreView.setVisibility(View.INVISIBLE);
+            round =10;
 
         }
     }
